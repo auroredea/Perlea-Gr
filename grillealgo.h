@@ -3,8 +3,8 @@
 
 #include <QImage>
 #include <QRgb>
-#include <QList>
-#include "grilletools.h"
+#include "palette.h"
+#include "matrice.h"
 #include <QDebug>
 
 inline int linear(int x, int y, int larg){ return x * larg + y; }

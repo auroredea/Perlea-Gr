@@ -1,29 +1,19 @@
-#include "grilletools.h"
+#include "palette.h"
 
 inline int getValueFromRgb(QRgb &rgb) {
     return qMax(qRed(rgb), qMax(qBlue(rgb), qGreen(rgb)));
 }
 
-Grilletools::Grilletools() { }
+Palette::Palette() { }
 
-Grilletools::~Grilletools() { }
+Palette::~Palette() { }
 
-int Grilletools::getPaletteSize()
+int Palette::getPaletteSize()
 {
     return palette.size();
 }
 
-QList<int> Grilletools::table(QString file)
-{
-    QList<int> matGrey;
-    matGrey << 17 << 1 << 1 << 1;
-    matGrey << 17 << 1 << 1 << 1;
-    matGrey << 17 << 15 << 1 << 1;
-    matGrey << 17 << 17 << 17 << 17;
-    return matGrey;
-}
-
-QRgb Grilletools::getValueRgbColor(QRgb pixel) const
+QRgb Palette::getValueRgbColor(QRgb pixel) const
 {
     const int value = getValueFromRgb(pixel);
     if(palette.contains(value)) return palette[value];
@@ -37,7 +27,7 @@ QRgb Grilletools::getValueRgbColor(QRgb pixel) const
      return pixel;
 }
 
-QRgb Grilletools::getHueRgbColor(QRgb pixel) const
+QRgb Palette::getHueRgbColor(QRgb pixel) const
 {
     QColor mycolor(pixel);
     const int hue = mycolor.hue();
@@ -52,7 +42,7 @@ QRgb Grilletools::getHueRgbColor(QRgb pixel) const
      return pixel;
 }
 
-void Grilletools::creerpalette(int maxcolor, QString filename)
+void Palette::creerpalette(int maxcolor, QString filename)
 {
     QXmlStreamReader reader;
     QString f = "sources/" + filename;
@@ -87,4 +77,3 @@ void Grilletools::creerpalette(int maxcolor, QString filename)
 
     file.close();
 }
-

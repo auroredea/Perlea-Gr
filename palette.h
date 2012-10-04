@@ -1,5 +1,5 @@
-#ifndef GRILLETOOLS_H
-#define GRILLETOOLS_H
+#ifndef PALETTE_H
+#define PALETTE_H
 
 #include <QString>
 #include <QMap>
@@ -8,13 +8,12 @@
 #include <QXmlStreamReader>
 #include <QFile>
 
-class Grilletools
+class Palette
 {
 public:
-    Grilletools();
-    ~Grilletools();
+    Palette();
+    ~Palette();
 
-    QList<int> table(QString file = "");
     void creerpalette(int maxcolor, QString filename);
     QRgb getValueRgbColor(QRgb pixel) const;
     QRgb getHueRgbColor(QRgb pixel) const;
@@ -24,4 +23,4 @@ private:
     QMap<int,QRgb> palette;
 };
 
-#endif // GRILLETOOLS_H
+#endif // PALETTE_H

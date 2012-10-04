@@ -2,17 +2,20 @@
 
 GrillealgoSquare::GrillealgoSquare(): grille(QImage(0,0))
 {
-    tools = new Grilletools;
+    palette = new Palette;
+    mat = new Matrice;
 }
 
 GrillealgoSquare::~GrillealgoSquare()
 {
-    delete tools;
+    delete palette;
+    delete mat;
 }
 
 QImage GrillealgoSquare::creerGrille(QImage original, int maxcolor)
 {
-    if(tools->getPaletteSize() != maxcolor) tools->creerpalette(maxcolor, "paletteshue.xml");
+    if(palette->getPaletteSize() != maxcolor)
+        palette->creerpalette(maxcolor, "paletteshue.xml");
     grille = QImage(original.width() * 4,
                     original.height() * 4,
                     QImage::Format_RGB32);
@@ -27,10 +30,10 @@ void GrillealgoSquare::decalage()
 
 void GrillealgoSquare::seuil(QImage original)
 {
-    QList<int> matrice = tools->table();
+    QList<int> matrice = mat->table();
     int sx = original.width();
     int sy = original.height();
-    int largeur = 4; //Dans Grilletools à l'avenir ??
+    int largeur = mat->getLargeur();
     for(int y = 0; y < sy; y++) {
         for(int x = 0; x < sx; x++) {
             QRgb p = original.pixel(x, y);
@@ -41,7 +44,7 @@ void GrillealgoSquare::seuil(QImage original)
                     if(nh > matrice.at(linear(mx, my, largeur))) {
                         grille.setPixel(mposx(x,mx, largeur),
                                         mposy(y,my, largeur),
-                                        tools->getHueRgbColor(p));
+                                        palette->getHueRgbColor(p));
                     }
                     //Sinon on met du grisé
                     else grille.setPixel(mposx(x,mx, largeur),

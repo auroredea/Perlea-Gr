@@ -15,7 +15,8 @@ protected:
     void decalage();
 
 private:
-    Grilletools *tools;
+    Palette *palette;
+    Matrice *mat;
     QImage grille;
 };
 
