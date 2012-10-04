@@ -12,7 +12,7 @@ GrillealgoSquare::~GrillealgoSquare()
 
 QImage GrillealgoSquare::creerGrille(QImage original, int maxcolor)
 {
-    if(tools->getPaletteSize() != maxcolor) tools->creerpalette(maxcolor);
+    if(tools->getPaletteSize() != maxcolor) tools->creerpalette(maxcolor, "paletteshue.xml");
     grille = QImage(original.width() * 4,
                     original.height() * 4,
                     QImage::Format_RGB32);
@@ -41,7 +41,7 @@ void GrillealgoSquare::seuil(QImage original)
                     if(nh > matrice.at(linear(mx, my, largeur))) {
                         grille.setPixel(mposx(x,mx, largeur),
                                         mposy(y,my, largeur),
-                                        tools->getIntermediColor(p));
+                                        tools->getHueRgbColor(p));
                     }
                     //Sinon on met du grisé
                     else grille.setPixel(mposx(x,mx, largeur),

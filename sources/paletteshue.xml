@@ -1,0 +1,36 @@
+<palettes>
+    <palette max="4">
+        <color vmin="0" vmax="90" red="255" green="255" blue="255" />
+        <color vmin="91" vmax="180" red="210" green="210" blue="210" />
+        <color vmin="181" vmax="270" red="130" green="130" blue="130" />
+        <color vmin="271" vmax="360" red="80" green="80" blue="80" />
+    </palette>
+    <palette max="8">
+        <color vmin="0" vmax="45" red="179" green="147" blue="54" />
+        <color vmin="46" vmax="90" red="116" green="179" blue="54" />
+        <color vmin="91" vmax="135" red="54" green="179" blue="85" />
+        <color vmin="136" vmax="180" red="54" green="179" blue="179" />
+        <color vmin="181" vmax="225" red="54" green="85" blue="179" />
+        <color vmin="226" vmax="270" red="116" green="54" blue="179" />
+        <color vmin="271" vmax="315" red="179" green="54" blue="147" />
+        <color vmin="316" vmax="360" red="179" green="54" blue="54" />
+    </palette>
+    <palette max="16">
+        <color vmin="0" vmax="22" red="179" green="108" blue="54" />
+        <color vmin="23" vmax="45" red="179" green="147" blue="54" />
+        <color vmin="46" vmax="67" red="162" green="179" blue="54" />
+        <color vmin="68" vmax="90" red="116" green="179" blue="54" />
+        <color vmin="91" vmax="112" red="68" green="179" blue="54" />
+        <color vmin="113" vmax="135" red="54" green="179" blue="85" />
+        <color vmin="136" vmax="157" red="54" green="179" blue="133" />
+        <color vmin="158" vmax="180" red="54" green="179" blue="179" />
+        <color vmin="181" vmax="202" red="54" green="131" blue="179" />
+        <color vmin="203" vmax="225" red="54" green="85" blue="179" />
+        <color vmin="226" vmax="247" red="70" green="54" blue="179" />
+        <color vmin="248" vmax="270" red="116" green="54" blue="179" />
+        <color vmin="271" vmax="292" red="164" green="104" blue="179" />
+        <color vmin="293" vmax="315" red="179" green="54" blue="147" />
+        <color vmin="316" vmax="337" red="179" green="54" blue="99" />
+        <color vmin="338" vmax="360" red="179" green="54" blue="54" />
+    </palette>
+</palettes>

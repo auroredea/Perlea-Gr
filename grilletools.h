@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QMap>
+#include <QColor>
 #include <QRgb>
 #include <QXmlStreamReader>
 #include <QFile>
@@ -14,8 +15,9 @@ public:
     ~Grilletools();
 
     QList<int> table(QString file = "");
-    void creerpalette(int maxcolor);
-    QRgb getIntermediColor(QRgb) const;
+    void creerpalette(int maxcolor, QString filename);
+    QRgb getValueRgbColor(QRgb pixel) const;
+    QRgb getHueRgbColor(QRgb pixel) const;
     int getPaletteSize();
 
 private:

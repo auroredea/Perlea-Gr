@@ -23,7 +23,7 @@ QList<int> Grilletools::table(QString file)
     return matGrey;
 }
 
-QRgb Grilletools::getIntermediColor(QRgb pixel) const
+QRgb Grilletools::getValueRgbColor(QRgb pixel) const
 {
     const int value = getValueFromRgb(pixel);
     if(palette.contains(value)) return palette[value];
@@ -37,10 +37,25 @@ QRgb Grilletools::getIntermediColor(QRgb pixel) const
      return pixel;
 }
 
-void Grilletools::creerpalette(int maxcolor)
+QRgb Grilletools::getHueRgbColor(QRgb pixel) const
+{
+    QColor mycolor(pixel);
+    const int hue = mycolor.hue();
+    if(palette.contains(hue)) return palette[hue];
+    QMap<int, QRgb>::const_iterator it = palette.constBegin();
+     while (it != palette.constEnd()) {
+         if(hue < it.key()) {
+             return it.value();
+         }
+         ++it;
+     }
+     return pixel;
+}
+
+void Grilletools::creerpalette(int maxcolor, QString filename)
 {
     QXmlStreamReader reader;
-    QString f = "sources/palettes.xml";
+    QString f = "sources/" + filename;
     QFile file(f);
     file.open(QFile::ReadOnly | QFile::Text);
     reader.setDevice(&file);
