@@ -3,7 +3,7 @@
 
 Grillewindow::Grillewindow(QWidget *parent):
     QDialog(parent),
-    maxColor(6),
+    maxColor(4),
     isCopied(false),
     homePath(""),
     seedsInRow(1),
@@ -71,6 +71,17 @@ void Grillewindow::openImage()
     if(filename != "") {
         showPreview(filename);
     }
+}
+
+QString Grillewindow::saveGrille(QImage img)
+{
+    QString random_name = "/" + "rand" + ".png"; //timestamp
+    bool saved = img.save(copyPath + random_name, "PNG", 0);
+    if(!saved) QMessageBox::critical(this,
+                   tr("Enregistrement"),
+                   tr("Erreur dans la sauvegarde de l'image"),
+                   QMessageBox::Ok);
+    return random_name;
 }
 
 void Grillewindow::accept()

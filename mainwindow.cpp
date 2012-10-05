@@ -96,6 +96,9 @@ void MainWindow::openDialogLoom()
     int response = gwindow->exec();
     if(response) {
         QImage newimage = gwindow->getGrille();
+        if(gwindow->isCopied) {
+            gwindow->saveGrille(newimage);
+        }
         showImg(newimage);
     }
 }

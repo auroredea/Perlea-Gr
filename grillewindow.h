@@ -5,6 +5,7 @@
 #include <QString>
 #include <QImage>
 #include <QFileDialog>
+#include <QMessageBox>
 #include "grillealgoloom.h"
 #include "grillealgopeyote.h"
 #include "grillealgosquare.h"
@@ -24,6 +25,11 @@ public:
     void setHomepath(QString homepath);
     void setComportement(Grillealgo* choice);
     QImage getGrille();
+    QString saveGrille(QImage img);
+
+    int maxColor;
+    int seedsInRow;
+    bool isCopied;
 
 protected:
     void connectAll();
@@ -38,9 +44,6 @@ private:
     QString homePath;
     Grillealgo* comportement;
     QString copyPath;
-    int maxColor;
-    int seedsInRow;
-    bool isCopied;
 };
 
 #endif // GRILLEWINDOW_H
