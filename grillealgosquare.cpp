@@ -12,7 +12,12 @@ GrillealgoSquare::~GrillealgoSquare()
     delete mat;
 }
 
-QImage GrillealgoSquare::creerGrille(QImage original, int maxcolor)
+int GrillealgoSquare::type()
+{
+    return 1;
+}
+
+QImage GrillealgoSquare::creerGrille(QImage original, int maxcolor, int seedsInRow)
 {
     if(palette->getPaletteSize() != maxcolor)
         palette->creerpalette(maxcolor, "paletteshue.xml");
@@ -23,7 +28,7 @@ QImage GrillealgoSquare::creerGrille(QImage original, int maxcolor)
     return grille;
 }
 
-void GrillealgoSquare::decalage()
+void GrillealgoSquare::decalage(int seedsInRow)
 {
     return;
 }

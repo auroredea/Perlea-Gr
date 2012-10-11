@@ -12,7 +12,12 @@ GrillealgoPeyote::~GrillealgoPeyote()
     delete mat;
 }
 
-QImage GrillealgoPeyote::creerGrille(QImage original, int maxcolor)
+int GrillealgoPeyote::type()
+{
+    return 1;
+}
+
+QImage GrillealgoPeyote::creerGrille(QImage original, int maxcolor, int seedsInRow)
 {
     if(palette->getPaletteSize() != maxcolor)
         palette->creerpalette(maxcolor, "paletteshue.xml");
@@ -20,17 +25,17 @@ QImage GrillealgoPeyote::creerGrille(QImage original, int maxcolor)
                     original.height() * 4,
                     QImage::Format_RGB32);
     seuil(original);
-    decalage();
+    decalage(seedsInRow);
     return grille;
 }
 
-void GrillealgoPeyote::decalage()
+void GrillealgoPeyote::decalage(int seedsInRow)
 {
     int sx = grille.width();
     int sy = grille.height();
     for(int y = 0; y < sy; y++) {
         for(int x = 4; x < sx; x+=8) {
-            for(int xr = x; xr < x+4; xr++) {
+            for(int xr = x; xr < x+4*seedsInRow; xr++) {
                 grille.setPixel(xr, y, grille.pixel(xr, y+2));
             }
         }

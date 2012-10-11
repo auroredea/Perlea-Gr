@@ -6,6 +6,7 @@
 #include <QImage>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QDateTime>
 #include "grillealgoloom.h"
 #include "grillealgopeyote.h"
 #include "grillealgosquare.h"

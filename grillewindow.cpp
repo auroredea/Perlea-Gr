@@ -40,7 +40,8 @@ QImage Grillewindow::getGrille()
     }
     else return comportement->creerGrille(
                 ui->image->pixmap()->toImage(),
-                maxColor);
+                maxColor,
+                seedsInRow);
 }
 
 void Grillewindow::showPreview(QString filename)
@@ -75,7 +76,10 @@ void Grillewindow::openImage()
 
 QString Grillewindow::saveGrille(QImage img)
 {
-    QString random_name = "/" + "rand" + ".png"; //timestamp
+    QDateTime now = QDateTime::currentDateTime();
+    qDebug() << "here";
+    QString random_name = "/" + now.toString("ddMMyyyyhmsz") + ".png";
+    qDebug() << random_name;
     bool saved = img.save(copyPath + random_name, "PNG", 0);
     if(!saved) QMessageBox::critical(this,
                    tr("Enregistrement"),

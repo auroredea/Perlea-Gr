@@ -8,11 +8,12 @@ class GrillealgoPeyote : public Grillealgo
 public:
     GrillealgoPeyote();
     ~GrillealgoPeyote();
-    QImage creerGrille(QImage original, int maxcolor);
+    QImage creerGrille(QImage original, int maxcolor, int seedsInRow);
+    int type();
 
 protected:
     void seuil(QImage original);
-    void decalage();
+    void decalage(int seedsInRow);
 
 private:
     Palette *palette;

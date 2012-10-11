@@ -12,7 +12,12 @@ GrillealgoLoom::~GrillealgoLoom()
     delete mat;
 }
 
-QImage GrillealgoLoom::creerGrille(QImage original, int maxcolor)
+int GrillealgoLoom::type()
+{
+    return 1;
+}
+
+QImage GrillealgoLoom::creerGrille(QImage original, int maxcolor, int seedsInRow)
 {
     if(palette->getPaletteSize() != maxcolor)
         palette->creerpalette(maxcolor, "paletteshue.xml");
@@ -23,7 +28,7 @@ QImage GrillealgoLoom::creerGrille(QImage original, int maxcolor)
     return grille;
 }
 
-void GrillealgoLoom::decalage()
+void GrillealgoLoom::decalage(int seedsInRow)
 {
     return;
 }
