@@ -31,11 +31,13 @@ QImage GrillealgoBrick::creerGrille(QImage original, int maxcolor, int seedsInRo
 
 void GrillealgoBrick::decalage(int seedsInRow)
 {
+    int rangs = 8*seedsInRow;
+    int decal = rangs/2;
     int sx = grille.width()-4;
     int sy = grille.height()-4;
-    for(int y = 4; y < sy; y+=8) {
+    for(int y = decal; y < sy; y+=rangs) {
         for(int x = 0; x < sx; x++) {
-            for(int yr = y; yr < y+4; yr++) {
+            for(int yr = y; yr < y+decal; yr++) {
                 grille.setPixel(x, yr, grille.pixel(x+2, yr));
             }
         }
