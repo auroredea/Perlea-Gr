@@ -14,7 +14,7 @@ GrillealgoSquare::~GrillealgoSquare()
 
 int GrillealgoSquare::type()
 {
-    return 1;
+    return Grillealgo::Square;
 }
 
 QImage GrillealgoSquare::creerGrille(QImage original, int maxcolor, int seedsInRow)

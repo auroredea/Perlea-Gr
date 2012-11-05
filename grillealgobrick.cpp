@@ -14,7 +14,7 @@ GrillealgoBrick::~GrillealgoBrick()
 
 int GrillealgoBrick::type()
 {
-    return 1;
+    return Grillealgo::Brick;
 }
 
 QImage GrillealgoBrick::creerGrille(QImage original, int maxcolor, int seedsInRow)

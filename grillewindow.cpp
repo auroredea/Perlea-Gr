@@ -31,6 +31,14 @@ void Grillewindow::setHomepath(QString homepath)
 void Grillewindow::setComportement(Grillealgo *choice)
 {
     comportement = choice;
+    if(choice->type() == Grillealgo::Peyote) {
+        ui->label_form3->setEnabled(true);
+        ui->donneeSeedsInRow->setEnabled(true);
+    }
+    else {
+        ui->label_form3->setEnabled(false);
+        ui->donneeSeedsInRow->setEnabled(false);
+    }
 }
 
 QImage Grillewindow::getGrille()

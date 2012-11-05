@@ -14,7 +14,7 @@ GrillealgoPeyote::~GrillealgoPeyote()
 
 int GrillealgoPeyote::type()
 {
-    return 1;
+    return Grillealgo::Peyote;
 }
 
 QImage GrillealgoPeyote::creerGrille(QImage original, int maxcolor, int seedsInRow)

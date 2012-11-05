@@ -14,7 +14,7 @@ GrillealgoLoom::~GrillealgoLoom()
 
 int GrillealgoLoom::type()
 {
-    return 1;
+    return Grillealgo::Loom;
 }
 
 QImage GrillealgoLoom::creerGrille(QImage original, int maxcolor, int seedsInRow)

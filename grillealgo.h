@@ -21,7 +21,7 @@ public:
              Brick = 0x2,
              Square = 0x4
          };
-         Q_DECLARE_FLAGS(Grilles, Grille)
+    Q_DECLARE_FLAGS(Grilles, Grille)
 
     virtual QImage creerGrille(QImage original, int maxcolor, int seedsInRow = 1) = 0;
     virtual int type() = 0;
