@@ -31,8 +31,8 @@ QImage GrillealgoBrick::creerGrille(QImage original, int maxcolor, int seedsInRo
 
 void GrillealgoBrick::decalage(int seedsInRow)
 {
-    int sx = grille.width();
-    int sy = grille.height();
+    int sx = grille.width()-4;
+    int sy = grille.height()-4;
     for(int y = 4; y < sy; y+=8) {
         for(int x = 0; x < sx; x++) {
             for(int yr = y; yr < y+4; yr++) {

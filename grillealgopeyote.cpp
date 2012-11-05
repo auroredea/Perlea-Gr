@@ -31,10 +31,11 @@ QImage GrillealgoPeyote::creerGrille(QImage original, int maxcolor, int seedsInR
 
 void GrillealgoPeyote::decalage(int seedsInRow)
 {
-    int sx = grille.width();
-    int sy = grille.height();
+    int rangs = 4*seedsInRow+4;
+    int sx = grille.width()-4;
+    int sy = grille.height()-4;
     for(int y = 0; y < sy; y++) {
-        for(int x = 4; x < sx; x+=8) {
+        for(int x = 4; x < sx; x+=rangs) {
             for(int xr = x; xr < x+4*seedsInRow; xr++) {
                 grille.setPixel(xr, y, grille.pixel(xr, y+2));
             }
