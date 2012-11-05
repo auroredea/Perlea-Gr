@@ -77,10 +77,8 @@ void Grillewindow::openImage()
 QString Grillewindow::saveGrille(QImage img)
 {
     QDateTime now = QDateTime::currentDateTime();
-    qDebug() << "here";
     QString random_name = "/" + now.toString("ddMMyyyyhmsz") + ".png";
-    qDebug() << random_name;
-    bool saved = img.save(copyPath + random_name, "PNG", 0);
+        bool saved = img.save(copyPath + random_name, "PNG", 0);
     if(!saved) QMessageBox::critical(this,
                    tr("Enregistrement"),
                    tr("Erreur dans la sauvegarde de l'image"),

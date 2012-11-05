@@ -110,6 +110,9 @@ void MainWindow::openDialogPeyote()
     int response = gwindow->exec();
     if(response) {
         QImage newimage = gwindow->getGrille();
+        if(gwindow->isCopied) {
+            gwindow->saveGrille(newimage);
+        }
         showImg(newimage);
     }
 }
@@ -121,6 +124,9 @@ void MainWindow::openDialogSquare()
     int response = gwindow->exec();
     if(response) {
         QImage newimage = gwindow->getGrille();
+        if(gwindow->isCopied) {
+            gwindow->saveGrille(newimage);
+        }
         showImg(newimage);
     }
 }
@@ -132,6 +138,9 @@ void MainWindow::openDialogBrick()
     int response = gwindow->exec();
     if(response) {
         QImage newimage = gwindow->getGrille();
+        if(gwindow->isCopied) {
+            gwindow->saveGrille(newimage);
+        }
         showImg(newimage);
     }
 }
