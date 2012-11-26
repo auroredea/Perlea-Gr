@@ -58,6 +58,8 @@
     <property name="title">
      <string>Aide</string>
     </property>
+    <addaction name="actionManuel"/>
+    <addaction name="actionApropos"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuGrilles"/>
@@ -105,6 +107,16 @@
   <action name="actionBrick">
    <property name="text">
     <string>Brick...</string>
+   </property>
+  </action>
+  <action name="actionManuel">
+   <property name="text">
+    <string>Manuel</string>
+   </property>
+  </action>
+  <action name="actionApropos">
+   <property name="text">
+    <string>A propos de</string>
    </property>
   </action>
  </widget>

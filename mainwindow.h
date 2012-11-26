@@ -9,6 +9,7 @@
 #include <QRect>
 #include <QMessageBox>
 #include "grillewindow.h"
+#include "helpwindow.h"
 #include <QDebug>
 
 namespace Ui {
@@ -38,10 +39,13 @@ protected slots:
     void openDialogPeyote();
     void openDialogSquare();
     void openDialogBrick();
+    void openApropos();
+    void openManuel();
     
 private:
     Ui::MainWindow *ui;
     Grillewindow *gwindow;
+    Helpwindow *hwindow;
     QString homePath;
 };
 

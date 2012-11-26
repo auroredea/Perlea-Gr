@@ -4,6 +4,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     gwindow(new Grillewindow),
+    hwindow(new Helpwindow),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -44,7 +45,8 @@ void MainWindow::connectAll()
     connect(ui->actionLoom, SIGNAL(triggered()), this, SLOT(openDialogLoom()));
     connect(ui->actionPeyote, SIGNAL(triggered()), this, SLOT(openDialogPeyote()));
     connect(ui->actionSquare, SIGNAL(triggered()), this, SLOT(openDialogSquare()));
-    connect(ui->actionBrick, SIGNAL(triggered()), this, SLOT(openDialogBrick()));
+    connect(ui->actionApropos, SIGNAL(triggered()), this, SLOT(openApropos()));
+    connect(ui->actionManuel, SIGNAL(triggered()), this, SLOT(openManuel()));
 }
 
 void MainWindow::shortcutAll()
@@ -143,6 +145,18 @@ void MainWindow::openDialogBrick()
         }
         showImg(newimage);
     }
+}
+
+void MainWindow::openApropos()
+{
+    hwindow->setType(1);
+    hwindow->exec();
+}
+
+void MainWindow::openManuel()
+{
+    hwindow->setType(0);
+    hwindow->exec();
 }
 
 QSize MainWindow::getResolution()
